@@ -1,4 +1,4 @@
-# ej_7
+#-------------------------------clases ej_7---------------------------------------------------
 class Persona:
     def __init__(self, nombre=None, edad=None, dni=None):
         self.__nombre = nombre
@@ -79,45 +79,7 @@ class Cuenta:
         self.__cantidad -= cantidad
 
 
-p = Persona
-p1 = Persona("Beto", 16, 33000000)
-p1.mostrar()
-
-p2 = Persona("Ana", 23, 33000000)
-
-c = Cuenta(p2, 30000)
-
-c.titular = p2
-
-print("Titular: ", c.titular)
-print("Cantidad: ", c.cantidad)
-
-c.titular = p1
-
-c.mostrar()
-c.cantidad = 20000
-
-print("Titular: ", c.titular, "Cantidad:", c.cantidad)
-
-c.ingresar(5000)
-c.mostrar()
-
-c.ingresar(25000)
-c.mostrar()
-
-c.ingresar(-25000)
-c.mostrar()
-
-c.retirar(5000)
-c.mostrar()
-
-p2.mostrar()
-print(p2.Es_mayor_de_edad())
-
-
-# ej_8
-
-
+# -------------------------------clases ej_8---------------------------------------------------
 class CuentaJoven(Cuenta):
     def __init__(self, titular=None, cantidad=None, bonificacion=None):
         super().__init__(titular, cantidad)
@@ -149,19 +111,3 @@ class CuentaJoven(Cuenta):
 
     def mostrar(self):
         return f"Cuenta Joven {self.bonificacion}%"
-
-
-p3 = Persona("Mario", 16, 33000000)
-j = CuentaJoven(p3, 100000, 30)
-
-print(j.titular.edad)
-print(j.bonificacion)
-
-print(j.es_titular_valido())
-
-print(j.cantidad)
-
-j.retirar(50000)
-
-print(j.cantidad)
-print(j.mostrar())
